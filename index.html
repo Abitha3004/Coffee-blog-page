@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="header">
+        <h2>"Brewing Brilliance: Exploring the World of Coffee"</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="card">
+                    <h2>A Rich History</h2>
+                    <h5>About where the history of coffee begins</h5>
+                    <div class="fakeimg"><img src="his.jpg" height="300px" width="500px"></div>
+                    <p>The story of coffee begins centuries ago in the highlands of Ethiopia, where legend has it that a goat herder named Kaldi discovered the energizing effects of coffee beans after noticing his goats became unusually lively after eating them. From these humble origins, coffee cultivation spread across the Arabian Peninsula, eventually reaching Europe and the rest of the world.</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <h2>Introduction to Coffee Culture</h2>
+                    <h5>A Brief Overview, Apr 1, 2024</h5>
+                    <div class="fakeimg"><img src="Coffee.jpg" height="350px" width="270px"></div>
+                    <p>Welcome to the wonderful world of coffee culture! More than just a morning pick-me-up, coffee has evolved into a global phenomenon that transcends borders, cultures, and generations.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="card">
+                            <h2>Coffee Around the World: A Global Journey of Flavors</h2>
+                            <div class="fakeimg"><img src="4.jpg" height="300px" width="500px"></div>
+                            <p>Coffee is not just a beverage; it's a cultural phenomenon that varies vastly from one corner of the globe to another. Join us on a flavorful journey as we explore how coffee is enjoyed and celebrated around the world.
+                                <br>
+                                <b>1. Ethiopia: Birthplace of Coffee</b>
+                                <br>
+                                In Ethiopia, coffee isn't just a drink—it's a way of life. The country's rich coffee culture dates back centuries, with traditional coffee ceremonies playing a central role in Ethiopian social gatherings. Discover the unique flavors of Ethiopian coffee, known for its bright acidity, floral aroma, and fruity undertones.
+                                <br>
+                                <b>2. Italy: Espresso and the Art of Dolce Vita</b>
+                                <br>
+                                Step into a bustling Italian café, and you'll be greeted by the aromatic scent of freshly brewed espresso. Italy is renowned for its espresso culture, where coffee is served strong, short, and with a dollop of crema on top. From the iconic espresso shots enjoyed at the bar to the leisurely cappuccinos sipped in piazzas, coffee is an integral part of Italian daily life.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <h2>DIY Coffee Recipes</h2>
+                            <h5>Elevate Your Home Brewing Game</h5>
+                            <div class="fakeimg"><img src="5.jpg" height="150px" width="250px"></div>
+                            <ul>
+                                <li><b>Classic Cold Brew</b></li>
+                                <li><b>Iced Caramel Macchiato</b></li>
+                                <li><b>Mocha Frappuccino</b></li>
+                                <li><b>Vanilla Almond Latte</b></li>
+                                <li><b>Affogato</b></li>
+                                <li><b>Spiced Pumpkin Latte</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Comment Section -->
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="card">
+                            <h2>Comments</h2>
+                            <div id="comments">
+                                <!-- Comments will be dynamically loaded here -->
+                            </div>
+                            <form id="commentForm">
+                                <div class="form-group">
+                                    <label for="commenterName">Name:</label>
+                                    <input type="text" class="form-control" id="commenterName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="commentText">Comment:</label>
+                                    <textarea class="form-control" id="commentText" rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            document.getElementById('commentForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('commenterName').value;
+                const comment = document.getElementById('commentText').value;
+                const commentSection = document.getElementById('comments');
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+                commentSection.appendChild(newComment);
+                document.getElementById('commentForm').reset();
+            });
+        </script>
+    </body>
+</html>
